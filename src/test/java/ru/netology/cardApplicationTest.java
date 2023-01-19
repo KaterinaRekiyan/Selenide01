@@ -14,11 +14,11 @@ public class cardApplicationTest {
     void shouldTestv1() {
        open(" http://localhost:9999");
 //        SelenideElement form = $("[data-test-id = cardApplication-form]");
-        $("[data-test-id=name]input").setValue("Васильев Василий");
+        $("[data-test-id=name] input").setValue("Васильев Василий");
         $("[data-test-id=phone] input").setValue("+79998887766");
         $("[data-test-id=agreement]").click();
-        $("button__text").click();
-        $(".alert-success").shouldHave(Condition.exactText("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время."));
+        $("button").click();
+        $(".order-success").shouldHave(Condition.exactText("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время."));
     }
 //
 //    @Test

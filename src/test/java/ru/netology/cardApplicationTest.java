@@ -13,47 +13,30 @@ public class cardApplicationTest {
     @Test
     void shouldTestv1() {
        open(" http://localhost:9999");
-//        SelenideElement form = $("[data-test-id = cardApplication-form]");
         $("[data-test-id=name] input").setValue("Васильев Василий");
         $("[data-test-id=phone] input").setValue("+79998887766");
         $("[data-test-id=agreement]").click();
         $("button").click();
         $(".order-success").shouldHave(Condition.exactText("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время."));
     }
-//
-//    @Test
-//    void shouldTestv2() {
-//        driver.get(" http://localhost:9999");
-//        driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Кулёчкина Алёна");
-//        driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79998887766");
-//        driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
-//        driver.findElement(By.tagName("button__text")).click();
-//        String expected = "Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.";
-//        String actual = driver.findElement(By.className("order-success")).getText().trim();
-//        assertEquals (expected, actual);
-//    }
-//
-//    @Test
-//    void shouldTestv3() {
-//        driver.get(" http://localhost:9999");
-//        driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Мамин-Сибиряк Василий");
-//        driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79998887766");
-//        driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
-//        driver.findElement(By.tagName("button__text")).click();
-//        String expected = "Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.";
-//        String actual = driver.findElement(By.className("order-success")).getText().trim();
-//        assertEquals (expected, actual);
-//    }
-//
-//    @Test
-//    void shouldTestv4() {
-//        driver.get(" http://localhost:9999");
-//        driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Ли Ия");
-//        driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79998887766");
-//        driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
-//        driver.findElement(By.tagName("button__text")).click();
-//        String expected = "Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.";
-//        String actual = driver.findElement(By.className("order-success")).getText().trim();
-//        assertEquals (expected, actual);
-//    }
+
+    @Test
+    void shouldTestv2() {
+        open(" http://localhost:9999");
+        $("[data-test-id=name] input").setValue("Мамин-Сибиряк Василий");
+        $("[data-test-id=phone] input").setValue("+79998887766");
+        $("[data-test-id=agreement]").click();
+        $("button").click();
+        $(".order-success").shouldHave(Condition.exactText("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время."));
+    }
+
+    @Test
+    void shouldTestv3() {
+        open(" http://localhost:9999");
+        $("[data-test-id=name] input").setValue("Ли Ия");
+        $("[data-test-id=phone] input").setValue("+79998887766");
+        $("[data-test-id=agreement]").click();
+        $("button").click();
+        $(".order-success").shouldHave(Condition.exactText("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время."));
+    }
 }
